@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import { useCakeStore } from './lib/store';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from './components/ui/tabs';
 import { Header } from './components/Header';
@@ -8,7 +7,7 @@ import { CustomerFeedback } from './components/CustomerFeedback';
 import { Cake, List, History } from 'lucide-react';
 
 function App() {
-  const [activeTab, setActiveTab] = useState('builder');
+  const activeTab = 'builder';
   const customerFeedback = useCakeStore(state => state.customerFeedback);
   const cakeHistory = useCakeStore(state => state.cakeHistory);
   
@@ -19,7 +18,7 @@ function App() {
       <main className="flex-1 pt-4 pb-16">
         <Tabs 
           value={activeTab} 
-          onValueChange={setActiveTab}
+          onValueChange={tab => activeTab = tab}
           className="max-w-7xl mx-auto px-4"
         >
           <TabsList className="grid w-full grid-cols-3 mb-6">
