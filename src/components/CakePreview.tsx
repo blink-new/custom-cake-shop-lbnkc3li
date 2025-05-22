@@ -9,7 +9,7 @@ interface CakePreviewProps {
   decorations: DecorationItem[];
 }
 
-export function CakePreview({ base, fillings, frosting, decorations }: CakePreviewProps) {
+export default function CakePreview({ base, fillings, frosting, decorations }: CakePreviewProps) {
   const [animation, setAnimation] = useState(false);
   
   // Trigger animation when cake parts change
